@@ -1,0 +1,33 @@
+{
+  "basics": {
+    "name": "Perseus Pfohl",
+    "email": "perseuspfohl@gmail.com",
+    "phone": "",
+    "website": "https://perseuspfohl.github.io",
+    "summary": "15-year-old high schooler exploring STEM and autonomous systems.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Durham, North Carolina",
+      "countryCode": "US",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "perseuspfohl",
+        "url": "https://github.com/perseuspfohl"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "perseuspfohl",
+        "url": "https://www.linkedin.com/in/perseuspfohl/"
+      },
+      {
+        "network": "YouTube",
+        "username": "perseuspfohl",
+        "url": "https://www.youtube.com/@perseuspfohl"
+      }
+    ]
+  }
+}
