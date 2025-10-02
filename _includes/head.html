@@ -1,5 +1,9 @@
 {% include base_path %}
 
+{% if site.analytics.provider == "google-analytics-4" %}
+  {% include analytics.html %}
+{% endif %}
+
 <meta charset="utf-8">
 
 {% include seo.html %}

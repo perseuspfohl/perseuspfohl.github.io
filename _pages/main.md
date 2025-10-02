@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Perseus Pfohl | STEM & Innovation"
+title: "Perseus Pfohl STEM & Innovation"
 author_profile: true
 ---
 
