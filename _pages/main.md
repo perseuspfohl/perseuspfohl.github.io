@@ -1,18 +1,16 @@
 ---
 permalink: /
-title: "👋 Hello there, I’m Perseus, and welcome to my website!"
+title: "Perseus Pfohl | STEM & Innovation"
 author_profile: true
 ---
 
-🔬 I’m currently a high school sophomore with a wide range of interests in STEM! My research generally varies from robotics to machine learning, so I'm always excited to learn something new!<br>
+👋 Hello there, I’m Perseus, and welcome to my website! I’m currently a high school sophomore with a wide range of interests in STEM! My research generally varies from robotics to machine learning, so I'm always excited to learn something new!<br>
 
-🌟 I love being part of the STEM community, and am always open to collaborate with other individuals!<br><br><br>
+🌟 I love being part of the STEM community, and am always open to collaborate with other individuals!<br><br>
 
 # 💡 STEM Contributions
-<br>
 
-## 🤖 Open-Source Robotic Arm
-<br>
+## 🤖 Open-Source Robotic Arm<br>
 
 One of my most recent projects is an open-source 7DOF serial kinematic chain. My goal is to provide a platform for students to build and design a variety of systems. While I’ve worked on other projects before, this is the first one I’ve fully developed. You can keep track of its progress by following me on my socials or checking back here from time to time!<br><br><br>
 
