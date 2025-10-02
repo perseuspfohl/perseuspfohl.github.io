@@ -112,9 +112,10 @@ kramdown:
 
 
 # These settings control the types of collections used by the template
+collections:
   projects:
     output: true
-    permalink: /:collection/:path/
+    permalink: /projects/:name/
 
 # These settings control how pages and collections are included in the site
 defaults:
