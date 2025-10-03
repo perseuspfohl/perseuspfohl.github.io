@@ -20,4 +20,4 @@ I’ve also contributed to other areas of STEM, including the amazing world of c
 
 # 👋 Thanks for visiting!<br>
 
-Thank you for visiting. If you’d like to stay up to date, feel free to follow my socials or check back later for any updates!
+Thank you for visiting! This is the main page, but there’s a lot more to explore, from my various projects and blog posts to updates on my robotics work. I hope you enjoy!

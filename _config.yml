@@ -174,7 +174,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
-  - jekyll-last-modified-at
   - jemoji
 
 # Mimic GitHub Pages with --safe
