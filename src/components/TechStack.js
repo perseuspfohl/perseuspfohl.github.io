@@ -1,0 +1,161 @@
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "../styles/TechStack.css";
+import { VscVscode } from "react-icons/vsc";
+import {
+  SiPython, SiNumpy, SiGit, SiJavascript, SiReact, SiHtml5, 
+  SiCss3, SiDocker, SiLinux, SiCplusplus, SiFcc,
+  SiPytorch, SiDassaultsystemes, SiCisco, SiArduino, SiRaspberrypi
+} from "react-icons/si";
+import { FaAws, FaNodeJs } from "react-icons/fa"; // Added FaNodeJs
+import { DiJava } from "react-icons/di";
+import { TbBrandCSharp } from "react-icons/tb";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const techStackData = [
+  // Original 10
+  { name: "Python", icon: <SiPython />, color: "#3776AB" },
+  { name: "NumPy", icon: <SiNumpy />, color: "#013243" },
+  { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
+  { name: "React", icon: <SiReact />, color: "#61DAFB" },
+  { name: "HTML", icon: <SiHtml5 />, color: "#E34F26" },
+  { name: "CSS", icon: <SiCss3 />, color: "#1572B6" },
+  { name: "VS Code", icon: <VscVscode />, color: "#007ACC" },
+  { name: "Git", icon: <SiGit />, color: "#F05032" },
+  { name: "Docker", icon: <SiDocker />, color: "#2496ED" },
+  { name: "AWS", icon: <FaAws />, color: "#FF9900" },
+  
+  // New 11 (with Node.js replacing CompTIA)
+  { name: "Java", icon: <DiJava />, color: "#007396" },
+  { name: "Linux", icon: <SiLinux />, color: "#FCC624" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#339933" }, // Replaced CompTIA
+  { name: "C++", icon: <SiCplusplus />, color: "#00599C" },
+  { name: "C#", icon: <TbBrandCSharp />, color: "#239120" },
+  { name: "FCC", icon: <SiFcc />, color: "#0060B1" },
+  { name: "PyTorch", icon: <SiPytorch />, color: "#EE4C2C" },
+  { name: "SolidWorks", icon: <SiDassaultsystemes />, color: "#005386" },
+  { name: "Cisco", icon: <SiCisco />, color: "#1BA0D7" },
+  { name: "Arduino", icon: <SiArduino />, color: "#00979D" },
+  { name: "Raspberry Pi", icon: <SiRaspberrypi />, color: "#C51A4A" },
+];
+
+export default function TechStack() {
+  const techStackRef = useRef(null);
+  
+  useEffect(() => {
+    console.log("TechStack component mounted");
+    
+    const totalItems = techStackData.length;
+    const cols = 2; 
+    const rows = Math.ceil(totalItems / cols);
+    const grid = [rows, cols];
+    
+    console.log("TechStack grid dimensions:", grid);
+    
+    gsap.set(".tech-icon-container", { opacity: 1, scale: 1 });
+    
+    gsap.fromTo(".tech-title",
+      {
+        y: 30,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#tech-stack",
+          start: "top 90%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    gsap.fromTo(".tech-icon-container",
+      {
+        scale: 0.1,
+        y: -250,
+        opacity: 0
+      },
+      {
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        opacity: 1,
+        stagger: {
+        grid: [7,15],
+        from: "center",
+        amount: 1 ,
+      },
+        ease: "power1.inOut", 
+        scrollTrigger: {
+          trigger: "#tech-stack",
+          start: "top 70%",
+          toggleActions: "play none none reverse" 
+        }
+      }
+    );
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  const handleIconHover = (e, enter) => {
+    const target = e.currentTarget;
+    
+    if (enter) {
+      gsap.to(target, {
+        y: -5,
+        scale: 1.1,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+      
+      gsap.to(target.querySelector('.tech-icon'), {
+        color: "var(--green-bright)",
+        duration: 0.3
+      });
+    } else {
+      gsap.to(target, {
+        y: 0,
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+      
+      gsap.to(target.querySelector('.tech-icon'), {
+        color: target.dataset.color,
+        duration: 0.3
+      });
+    }
+  };
+
+  return (
+    <section id="tech-stack" ref={techStackRef}>
+      <div className="section-header">
+        <span className="section-title tech-title">Tech Stack</span>
+      </div>
+      
+      <div className="tech-grid-container">
+        {techStackData.map((tool, index) => (
+          <div
+            key={tool.name}
+            className="tech-icon-container"
+            data-color={tool.color}
+            title={tool.name} 
+            onMouseEnter={(e) => handleIconHover(e, true)}
+            onMouseLeave={(e) => handleIconHover(e, false)}
+          >
+            <div className="tech-icon" style={{ color: tool.color }}>
+              {tool.icon}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
